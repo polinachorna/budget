@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мій особистий бюджет · Інфографіка · 2025–2026</title>
+<link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+:root {
+  --bg-primary:   #ffffff;
+  --bg-secondary: #f5f4f0;
+  --bg-tertiary:  #eeede9;
+  --bg-info:    #e6f1fb;
+  --bg-success: #e1f5ee;
+  --bg-warning: #faeeda;
+  --bg-danger:  #faece7;
+  --tx-primary:   #1a1a1a;
+  --tx-secondary: #666666;
+  --tx-tertiary:  #999999;
+  --tx-info:    #0c447c;
+  --tx-success: #085041;
+  --tx-warning: #633806;
+  --tx-danger:  #4a1b0c;
+  --br-faint:  rgba(0,0,0,.10);
+  --br-light:  rgba(0,0,0,.18);
+  --br-info:   #85b7eb;
+  --br-success:#5dcaa5;
+  --br-warning:#ef9f27;
+  --br-danger: #f09595;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --sans: -apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:#eceae3;color:var(--tx-primary);font-size:14px;line-height:1.5}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 48px}
+
+/* SECTION HEADER */
+.sec-header{background:#1A2E4A;color:#fff;padding:13px 18px;border-radius:var(--r-lg);margin:28px 0 14px;font-size:14px;font-weight:500}
+.sec-header:first-child{margin-top:0}
+
+/* LAYOUT */
+.w{display:flex;flex-direction:column;gap:11px}
+.g2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.g4s{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+
+/* BASE CARD */
+.card{background:var(--bg-primary);border:.5px solid var(--br-faint);border-radius:var(--r-lg);padding:13px 15px}
+
+/* SECTION LABEL */
+.sl{font-size:10px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--tx-tertiary);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.sl::after{content:'';flex:1;height:.5px;background:var(--br-faint)}
+
+/* KPI */
+.kpi{background:var(--bg-secondary);border-radius:var(--r-md);padding:10px 12px;text-align:center}
+.kv{font-size:18px;font-weight:500;line-height:1.1}
+.kl{font-size:10px;color:var(--tx-secondary);margin-top:3px;line-height:1.3}
+
+/* HIGHLIGHT BOX */
+.hb{border-radius:var(--r-md);padding:10px 12px;font-size:11px;line-height:1.5}
+.ok {background:#E1F5EE;color:#085041;border:.5px solid #5DCAA5}
+.wn {background:#FAEEDA;color:#633806;border:.5px solid #EF9F27}
+.okb{background:#E1F5EE;color:#085041;border:.5px solid #5DCAA5}
+.wnb{background:#FAEEDA;color:#633806;border:.5px solid #EF9F27}
+.dgb{background:#FAECE7;color:#4A1B0C;border:.5px solid #D85A30}
+
+/* BADGE */
+.bdg{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.b-ok {background:#E1F5EE;color:#085041;border:.5px solid #5DCAA5}
+.b-wn {background:#FAEEDA;color:#633806;border:.5px solid #EF9F27}
+.b-dng{background:#FAECE7;color:#4A1B0C;border:.5px solid #D85A30}
+.b-inf{background:#E6F1FB;color:#0C447C;border:.5px solid #85B7EB}
+.b-neu{background:var(--bg-secondary);color:var(--tx-secondary);border:.5px solid var(--br-faint)}
+
+/* PROGRESS / BAR CHARTS */
+.pt{height:6px;background:var(--br-faint);border-radius:3px;overflow:hidden;margin-top:8px}
+.pf{height:100%;border-radius:3px}
+.pn{font-size:10px;color:var(--tx-tertiary);margin-top:3px}
+.br2{margin-bottom:7px}
+.bt{display:flex;justify-content:space-between;font-size:11px;color:var(--tx-secondary);margin-bottom:3px}
+.btr{height:5px;background:var(--br-faint);border-radius:3px;overflow:hidden}
+.btf{height:100%;border-radius:3px}
+
+/* LEGEND ROW */
+.lgr{display:flex;flex-wrap:wrap;gap:9px}
+.li{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--tx-secondary)}
+.ld{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+
+/* CHART AREA */
+.ch{position:relative;width:100%}
+
+/* ─── SECTION 1 ─── */
+.mc{border-radius:var(--r-lg);border:.5px solid var(--br-faint);overflow:hidden}
+.mh{padding:10px 13px;font-size:13px;font-weight:500;color:#fff}
+.mb{padding:11px 13px}
+.sr{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:.5px solid var(--br-faint)}
+.sr:last-child{border-bottom:none}
+.sl2{font-size:11px;color:var(--tx-secondary)}
+.sv{font-size:12px;font-weight:500}
+.mn{font-size:10px;color:var(--tx-secondary);padding:8px 13px;border-top:.5px solid var(--br-faint);font-style:italic;line-height:1.4}
+
+/* ─── SECTION 2: TABS ─── */
+.tabs{display:flex;border-bottom:.5px solid var(--br-faint)}
+.tab{padding:9px 22px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--tx-secondary);border-bottom:2px solid transparent;margin-bottom:-1px;font-family:var(--sans)}
+.tab.on{border-bottom-color:currentColor}
+.panel{display:none;flex-direction:column;gap:10px;padding-top:14px}
+.panel.active{display:flex}
+.hero{border-radius:var(--r-lg);padding:14px 16px;border:.5px solid var(--br-faint)}
+.ht{font-size:16px;font-weight:500;color:var(--tx-primary);margin-bottom:3px}
+.hs{font-size:11px;color:var(--tx-secondary)}
+.ct{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--tx-tertiary);margin-bottom:9px}
+.hi{font-size:11px;color:var(--tx-secondary);padding:5px 0;border-bottom:.5px solid var(--br-faint);line-height:1.4}
+.hi:last-child{border-bottom:none}
+.hi strong{color:var(--tx-primary)}
+.vrd{border-radius:var(--r-md);padding:11px 13px;font-size:11px;line-height:1.6;font-style:italic}
+
+/* ─── SECTION 3: INDICATORS ─── */
+.row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:.5px solid var(--br-faint)}
+.row:last-child{border-bottom:none}
+.rl{font-size:11px;color:var(--tx-secondary);flex:1;line-height:1.3}
+.rv{font-size:13px;font-weight:500;min-width:52px;text-align:right}
+.rn{font-size:10px;color:var(--tx-tertiary);min-width:40px;text-align:right}
+.gt{height:6px;background:var(--br-faint);border-radius:3px;overflow:hidden;margin-top:6px}
+.gf{height:100%;border-radius:3px}
+.ml{font-size:10px;color:var(--tx-tertiary);margin-top:3px;display:flex;justify-content:space-between}
+.fi{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:.5px solid var(--br-faint)}
+.fi:last-child{border-bottom:none}
+.fd{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.fn{font-size:12px;font-weight:500;color:var(--tx-primary);margin-bottom:2px}
+.fs{font-size:11px;color:var(--tx-secondary);line-height:1.4}
+.pr{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:.5px solid var(--br-faint)}
+.pr:last-child{border-bottom:none}
+.pb{flex:1;height:8px;background:var(--br-faint);border-radius:4px;overflow:hidden}
+.ii{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:.5px solid var(--br-faint)}
+.ii:last-child{border-bottom:none}
+.tx{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:.5px solid var(--br-faint)}
+.tx:last-child{border-bottom:none}
+.dc{border:.5px solid var(--br-faint);border-radius:var(--r-lg);padding:12px;position:relative}
+.dc.rec{border:2px solid var(--br-info)}
+.db{font-size:13px;font-weight:500;color:var(--tx-primary);margin-bottom:2px}
+.dr{font-size:24px;font-weight:500;margin:5px 0 4px}
+.dd{font-size:11px;color:var(--tx-secondary);line-height:1.6}
+.rb{position:absolute;top:-1px;right:12px;background:var(--bg-info);color:var(--tx-info);font-size:10px;font-weight:500;padding:2px 8px;border-radius:0 0 6px 6px}
+.sc{border:.5px solid var(--br-faint);border-radius:var(--r-md);padding:10px}
+.sc.act{border:2px solid #1D9E75;background:#E1F5EE}
+.sn{font-size:20px;font-weight:500;margin-bottom:4px}
+.sm{font-size:11px;font-weight:500;margin-bottom:4px;color:var(--tx-primary)}
+.sd{font-size:10px;color:var(--tx-secondary);line-height:1.4}
+.sc.act .sm{color:#085041}
+.sc.act .sd{color:#0F6E56}
+.sc.act .sn{color:#1D9E75}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════════════════════════════════════════
+     БЛОК 1: ЗАГАЛЬНИЙ ОГЛЯД
+══════════════════════════════════════════════ -->
+<div class="sec-header">Мій бюджет · Monobank · Грудень 2025 — Лютий 2026 · Загальний огляд</div>
+<div class="w">
+
+<div class="g4">
+  <div class="kpi"><div class="kv" style="color:#1D9E75">80 687 ₴</div><div class="kl">Мої сукупні доходи</div></div>
+  <div class="kpi"><div class="kv" style="color:#D85A30">36 031 ₴</div><div class="kl">Мої сукупні витрати</div></div>
+  <div class="kpi"><div class="kv" style="color:#2E7FCC">30 357 ₴</div><div class="kl">Я заощадила</div></div>
+  <div class="kpi"><div class="kv" style="color:#7F77DD">~2 400 $</div><div class="kl">Мої валютні накопичення</div></div>
+</div>
+
+<div class="sl">Три місяці — три мої фінансові сюжети</div>
+<div class="g3">
+  <div class="mc">
+    <div class="mh" style="background:#B8730A">Грудень 2025</div>
+    <div class="mb">
+      <div class="sr"><span class="sl2">Я отримала</span><span class="sv" style="color:#1D9E75">40 839 ₴</span></div>
+      <div class="sr"><span class="sl2">Я витратила</span><span class="sv" style="color:#D85A30">18 367 ₴</span></div>
+      <div class="sr"><span class="sl2">Я заощадила</span><span class="sv" style="color:#2E7FCC">18 230 ₴</span></div>
+      <div class="sr"><span class="sl2">Транзакцій</span><span class="sv">53</span></div>
+      <div class="pt"><div class="pf" style="width:45%;background:#D85A30"></div></div>
+      <div class="pn">45% мого доходу — на витрати</div>
+    </div>
+    <div class="mn">Рекордний місяць: поділила зарплату з колегою, купила одяг, подарувала картинг подрузі — і все одно відправила 18 230 ₴ на долари для майбутньої камери.</div>
+  </div>
+  <div class="mc">
+    <div class="mh" style="background:#1A65A8">Січень 2026</div>
+    <div class="mb">
+      <div class="sr"><span class="sl2">Я отримала</span><span class="sv" style="color:#1D9E75">19 340 ₴</span></div>
+      <div class="sr"><span class="sl2">Я витратила</span><span class="sv" style="color:#D85A30">8 999 ₴</span></div>
+      <div class="sr"><span class="sl2">Я заощадила</span><span class="sv" style="color:#2E7FCC">2 127 ₴</span></div>
+      <div class="sr"><span class="sl2">Транзакцій</span><span class="sv">42</span></div>
+      <div class="pt"><div class="pf" style="width:47%;background:#D85A30"></div></div>
+      <div class="pn">47% мого доходу — на витрати</div>
+    </div>
+    <div class="mn">Типовий місяць. Добряче повечеряла у кафе (2 605 ₴), поповнила Temu і тричі купила вейп. Самокат JET.UA — мій основний транспорт.</div>
+  </div>
+  <div class="mc">
+    <div class="mh" style="background:#0F7A55">Лютий 2026</div>
+    <div class="mb">
+      <div class="sr"><span class="sl2">Я отримала</span><span class="sv" style="color:#1D9E75">20 508 ₴</span></div>
+      <div class="sr"><span class="sl2">Я витратила</span><span class="sv" style="color:#D85A30">8 665 ₴</span></div>
+      <div class="sr"><span class="sl2">У банку «На машину»</span><span class="sv" style="color:#2E7FCC">10 000 ₴</span></div>
+      <div class="sr"><span class="sl2">Транзакцій</span><span class="sv">34</span></div>
+      <div class="pt"><div class="pf" style="width:42%;background:#1D9E75"></div></div>
+      <div class="pn">42% мого доходу — на витрати (мій рекорд!)</div>
+    </div>
+    <div class="mn">Мій найкращий місяць. Найменші витрати, 10 000 ₴ у банку на авто, а з доларової картки — 59 963 ₴ на Sony ZV-10 Mark II. Вона моя.</div>
+  </div>
+</div>
+
+<div class="sl">Мої доходи та витрати — порівняння</div>
+<div class="card">
+  <div class="lgr" style="margin-bottom:10px">
+    <span class="li"><span class="ld" style="background:#1D9E75"></span>Мої доходи</span>
+    <span class="li"><span class="ld" style="background:#D85A30"></span>Мої витрати</span>
+    <span class="li"><span class="ld" style="background:#2E7FCC"></span>Я заощадила</span>
+  </div>
+  <div class="ch" style="height:210px"><canvas id="c1" role="img" aria-label="Мої доходи, витрати і заощадження за три місяці">Грудень: дохід 40839, витрати 18367, заощадження 18230. Січень: дохід 19340, витрати 8999, заощадження 2127. Лютий: дохід 20508, витрати 8665, заощадження 10000.</canvas></div>
+</div>
+
+<div class="sl">Мої витрати по категоріях — динаміка між місяцями</div>
+<div class="card">
+  <div class="lgr" style="margin-bottom:10px">
+    <span class="li"><span class="ld" style="background:#B8730A"></span>Грудень</span>
+    <span class="li"><span class="ld" style="background:#1A65A8"></span>Січень</span>
+    <span class="li"><span class="ld" style="background:#0F7A55"></span>Лютий</span>
+  </div>
+  <div class="ch" style="height:230px"><canvas id="c2" role="img" aria-label="Порівняння моїх витрат по категоріях між місяцями">Категорії: Їжа, Одяг, Транспорт, Краса, Мобільний, Інше, Перекази по трьох місяцях.</canvas></div>
+</div>
+
+<div class="sl">Де я заробляю — мої джерела доходу (середній місяць)</div>
+<div class="card">
+  <div class="ch" style="height:160px"><canvas id="c3" role="img" aria-label="Мої джерела доходу в середньому за місяць">SMM студія 13260, Кірпічик 2150, Бублік 1605, Булка 1200, Стипендія 1418.</canvas></div>
+  <div class="lgr" style="margin-top:8px">
+    <span class="li"><span class="ld" style="background:#1D9E75"></span>SMM (68%)</span>
+    <span class="li"><span class="ld" style="background:#2E7FCC"></span>Кірпічик (11%)</span>
+    <span class="li"><span class="ld" style="background:#7F77DD"></span>Бублік (8%)</span>
+    <span class="li"><span class="ld" style="background:#D4841A"></span>Булка (6%)</span>
+    <span class="li"><span class="ld" style="background:#D85A30"></span>Стипендія (7%)</span>
+  </div>
+</div>
+
+<div class="sl">Де я витрачаю найбільше</div>
+<div class="g2">
+  <div class="card">
+    <div class="ct">Скільки я витрачаю на вейп (MAHAZYN)</div>
+    <div class="br2"><div class="bt"><span>Грудень (×3)</span><span>960 ₴</span></div><div class="btr"><div class="btf" style="width:74%;background:#D85A30"></div></div></div>
+    <div class="br2"><div class="bt"><span>Січень (×3)</span><span>1 060 ₴</span></div><div class="btr"><div class="btf" style="width:82%;background:#D85A30"></div></div></div>
+    <div class="br2"><div class="bt"><span>Лютий (~)</span><span>~1 060 ₴</span></div><div class="btr"><div class="btf" style="width:82%;background:#D85A30"></div></div></div>
+    <div style="margin-top:8px;padding-top:8px;border-top:.5px solid var(--br-faint);font-size:12px;font-weight:500;color:#D85A30">~12 960 ₴/рік — це один місяць моєї зарплати SMM</div>
+  </div>
+  <div class="card">
+    <div class="ct">Мої витрати на кафе</div>
+    <div class="br2"><div class="bt"><span>Грудень</span><span>724 ₴</span></div><div class="btr"><div class="btf" style="width:34%;background:#1D9E75"></div></div></div>
+    <div class="br2"><div class="bt"><span>Січень (SUKE 1 205 ₴ + інші)</span><span>2 605 ₴</span></div><div class="btr"><div class="btf" style="width:100%;background:#1D9E75"></div></div></div>
+    <div class="br2"><div class="bt"><span>Лютий</span><span>835 ₴</span></div><div class="btr"><div class="btf" style="width:39%;background:#1D9E75"></div></div></div>
+    <div style="margin-top:8px;padding-top:8px;border-top:.5px solid var(--br-faint);font-size:11px;color:var(--tx-secondary);font-style:italic">У січні я явно ходила куди треба і не треба. Але було смачно.</div>
+  </div>
+</div>
+
+<div class="hb ok">Мій загальний результат за 3 місяці: витрачала 42–47% доходу, решту — заощаджувала. Накопичила на камеру, поклала 10 000 ₴ на авто, маю $2 400+ у валюті. Для 18 років — непогано.</div>
+
+</div><!-- /блок 1 -->
+
+
+<!-- ══════════════════════════════════════════════
+     БЛОК 2: КОЖЕН МІСЯЦЬ ОКРЕМО
+══════════════════════════════════════════════ -->
+<div class="sec-header">Мій бюджет · По місяцях · Детально</div>
+
+<div class="tabs">
+  <button class="tab on" style="color:#B8730A" onclick="sw('dec',this,'#B8730A')">Грудень 2025</button>
+  <button class="tab" onclick="sw('jan',this,'#1A65A8')">Січень 2026</button>
+  <button class="tab" onclick="sw('feb',this,'#0F7A55')">Лютий 2026</button>
+</div>
+
+<!-- ГРУДЕНЬ -->
+<div id="p-dec" class="panel active">
+  <div class="hero" style="background:#FAEEDA;border-color:#EF9F27">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+      <div><div class="ht">Грудень 2025 — мій місяць рекордів і красивих жертв</div><div class="hs">53 транзакції · поділила зарплату, купила одяг і відправила 18 тис. на долари</div></div>
+      <span class="bdg b-wn" style="flex-shrink:0">Нетиповий</span>
+    </div>
+  </div>
+  <div class="g4">
+    <div class="kpi"><div class="kv" style="color:#1D9E75">40 839 ₴</div><div class="kl">Я отримала</div></div>
+    <div class="kpi"><div class="kv" style="color:#D85A30">18 367 ₴</div><div class="kl">Я витратила</div></div>
+    <div class="kpi"><div class="kv" style="color:#2E7FCC">18 230 ₴</div><div class="kl">Я заощадила (долари)</div></div>
+    <div class="kpi"><div class="kv" style="color:#B8730A">45%</div><div class="kl">Витрат від доходу</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Як я витратила 18 367 ₴</div>
+      <div class="br2"><div class="bt"><span>Я поділила зарплату з колегою</span><span>6 500 ₴</span></div><div class="btr"><div class="btf" style="width:100%;background:#888780"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я купила одяг (CHER17)</span><span>3 000 ₴</span></div><div class="btr"><div class="btf" style="width:41%;background:#7F77DD"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я каталась (самокат + таксі)</span><span>2 361 ₴</span></div><div class="btr"><div class="btf" style="width:32%;background:#2E7FCC"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я їла (кафе + продукти)</span><span>1 900 ₴</span></div><div class="btr"><div class="btf" style="width:26%;background:#1D9E75"></div></div></div>
+      <div class="br2"><div class="bt"><span>Вейп, е-віза, готівка, пошта</span><span>1 790 ₴</span></div><div class="btr"><div class="btf" style="width:24%;background:#D85A30"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я підстриглась (Rosedale + EVA)</span><span>1 024 ₴</span></div><div class="btr"><div class="btf" style="width:14%;background:#D4841A"></div></div></div>
+      <div class="br2"><div class="bt"><span>Мобільний (Lifecell ×3)</span><span>900 ₴</span></div><div class="btr"><div class="btf" style="width:12%;background:#4A9FCC"></div></div></div>
+      <div class="pt"><div class="pf" style="width:45%;background:#D85A30"></div></div>
+      <div class="pn">45% мого доходу витрачено · без поділу ЗП — лише 32%</div>
+    </div>
+    <div class="card">
+      <div class="ct">Що виділяється в грудні</div>
+      <div class="hi"><strong>6 500 ₴</strong> — я поділила зарплату з колегою (востаннє, далі самостійно)</div>
+      <div class="hi"><strong>4 500 ₴</strong> — я отримала передоплату від Слойки за 2 місяці занять</div>
+      <div class="hi"><strong>1 500 ₴</strong> — я подарувала картинг-сертифікат подрузі на корпоратив</div>
+      <div class="hi"><strong>950 ₴</strong> — стрижка у Rosedale (раз на кілька місяців)</div>
+      <div class="hi"><strong>331 ₴</strong> — я оплатила ізраїльську е-візу (ETA-IL)</div>
+      <div class="hi"><strong>900 ₴</strong> — три платежі Lifecell підряд — поповнила наперед</div>
+      <div class="hi"><strong>18 230 ₴</strong> — відправила на долари для майбутньої камери Sony</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct">Моя кругова діаграма витрат — грудень</div>
+    <div class="ch" style="height:185px"><canvas id="cd1" role="img" aria-label="Кругова діаграма моїх витрат у грудні 2025">Перекази 7310, Одяг 3000, Транспорт 2361, Їжа 1900, Інше 1790, Краса 1024, Мобільний 900.</canvas></div>
+  </div>
+  <div class="vrd" style="background:#FAEEDA;color:#633806;border:.5px solid #EF9F27">
+    Грудень був шумним, але продуманим. Рекордний дохід — 40 839 ₴, але я одразу відправила 18 230 ₴ на доларову картку. Без урахування поділу зарплати мої особисті витрати — лише 11 867 ₴. Місяць великих рухів і чітких цілей.
+  </div>
+</div>
+
+<!-- СІЧЕНЬ -->
+<div id="p-jan" class="panel">
+  <div class="hero" style="background:#E6F1FB;border-color:#85B7EB">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+      <div><div class="ht">Січень 2026 — мій місяць кафе, самокатів і Temu</div><div class="hs">42 транзакції · їла смачно, їздила часто і трохи пошопінгувала на Temu</div></div>
+      <span class="bdg b-inf" style="flex-shrink:0">Типовий</span>
+    </div>
+  </div>
+  <div class="g4">
+    <div class="kpi"><div class="kv" style="color:#1D9E75">19 340 ₴</div><div class="kl">Я отримала</div></div>
+    <div class="kpi"><div class="kv" style="color:#D85A30">8 999 ₴</div><div class="kl">Я витратила</div></div>
+    <div class="kpi"><div class="kv" style="color:#2E7FCC">2 127 ₴</div><div class="kl">Я заощадила (долари)</div></div>
+    <div class="kpi"><div class="kv" style="color:#1A65A8">47%</div><div class="kl">Витрат від доходу</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Як я витратила 8 999 ₴</div>
+      <div class="br2"><div class="bt"><span>Вейп, Temu, Google, пошта…</span><span>3 209 ₴</span></div><div class="btr"><div class="btf" style="width:100%;background:#D85A30"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я їла (кафе 1 998 + продукти 607)</span><span>2 605 ₴</span></div><div class="btr"><div class="btf" style="width:81%;background:#1D9E75"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я переказала (особисті)</span><span>2 200 ₴</span></div><div class="btr"><div class="btf" style="width:69%;background:#888780"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я купила одяг (il new look)</span><span>490 ₴</span></div><div class="btr"><div class="btf" style="width:15%;background:#7F77DD"></div></div></div>
+      <div class="br2"><div class="bt"><span>Мобільний (Lifecell)</span><span>300 ₴</span></div><div class="btr"><div class="btf" style="width:9%;background:#4A9FCC"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я каталась на самокаті JET.UA</span><span>195 ₴</span></div><div class="btr"><div class="btf" style="width:6%;background:#2E7FCC"></div></div></div>
+      <div class="pt"><div class="pf" style="width:47%;background:#D85A30"></div></div>
+      <div class="pn">47% мого доходу витрачено</div>
+    </div>
+    <div class="card">
+      <div class="ct">Що виділяється в січні</div>
+      <div class="hi"><strong>3 209 ₴</strong> — «Інше» стало моєю найбільшою категорією (35,7%)</div>
+      <div class="hi"><strong>1 060 ₴</strong> — я тричі купила вейп MAHAZYN (320+320+420 ₴)</div>
+      <div class="hi"><strong>1 205 ₴</strong> — я повечеряла у SUKE (одне відвідування!)</div>
+      <div class="hi"><strong>454 ₴</strong> — я замовила на Temu чохли, розчіски та дрібниці</div>
+      <div class="hi"><strong>349 ₴</strong> — SPD Kordilian (мабуть, ресторан)</div>
+      <div class="hi"><strong>266 ₴</strong> — Google-підписка для SMM (мені відшкодовує студія)</div>
+      <div class="hi"><strong>~141 ₴</strong> — десятки поїздок на JET.UA самокаті</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct">Моя кругова діаграма витрат — січень</div>
+    <div class="ch" style="height:185px"><canvas id="cd2" role="img" aria-label="Кругова діаграма моїх витрат у січні 2026">Інше 3209, Їжа 2605, Перекази 2200, Одяг 490, Мобільний 300, Розваги 195.</canvas></div>
+  </div>
+  <div class="vrd" style="background:#E6F1FB;color:#042C53;border:.5px solid #85B7EB">
+    Січень виявився типовим: мої витрати вдвічі менші ніж у грудні (8 999 ₴). Але я з'їла на 2 605 ₴ — активний соціальний місяць. Категорія «Інше» перемогла: вейп, Temu і підписки. Самокат — мій вірний транспорт.
+  </div>
+</div>
+
+<!-- ЛЮТИЙ -->
+<div id="p-feb" class="panel">
+  <div class="hero" style="background:#E1F5EE;border-color:#5DCAA5">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+      <div><div class="ht">Лютий 2026 — мій місяць дисципліни і Sony ZV-10 Mark II</div><div class="hs">34 транзакції · найкращі показники за три місяці, і я нарешті купила камеру</div></div>
+      <span class="bdg b-ok" style="flex-shrink:0">Мій рекорд</span>
+    </div>
+  </div>
+  <div class="g4">
+    <div class="kpi"><div class="kv" style="color:#1D9E75">20 508 ₴</div><div class="kl">Я отримала</div></div>
+    <div class="kpi"><div class="kv" style="color:#D85A30">8 665 ₴</div><div class="kl">Я витратила (мінімум!)</div></div>
+    <div class="kpi"><div class="kv" style="color:#2E7FCC">10 000 ₴</div><div class="kl">Я поклала у банку</div></div>
+    <div class="kpi"><div class="kv" style="color:#0F7A55">42%</div><div class="kl">Витрат — мій рекорд</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Як я витратила 8 665 ₴</div>
+      <div class="br2"><div class="bt"><span>Вейп і підписки</span><span>2 160 ₴</span></div><div class="btr"><div class="btf" style="width:100%;background:#D85A30"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я поклала у банку «На машину»</span><span>1 800 ₴</span></div><div class="btr"><div class="btf" style="width:83%;background:#1D9E75"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я переказала (особисті)</span><span>1 725 ₴</span></div><div class="btr"><div class="btf" style="width:80%;background:#888780"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я їла (кафе 835 + продукти 602)</span><span>1 437 ₴</span></div><div class="btr"><div class="btf" style="width:66%;background:#1D9E75;opacity:.7"></div></div></div>
+      <div class="br2"><div class="bt"><span>Мобільний (Lifecell ×2)</span><span>600 ₴</span></div><div class="btr"><div class="btf" style="width:28%;background:#4A9FCC"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я купила одяг</span><span>425 ₴</span></div><div class="btr"><div class="btf" style="width:20%;background:#7F77DD"></div></div></div>
+      <div class="br2"><div class="bt"><span>Таксі і самокат</span><span>409 ₴</span></div><div class="btr"><div class="btf" style="width:19%;background:#2E7FCC"></div></div></div>
+      <div class="br2"><div class="bt"><span>Я зайшла у EVA</span><span>107 ₴</span></div><div class="btr"><div class="btf" style="width:5%;background:#D4841A"></div></div></div>
+      <div class="pt"><div class="pf" style="width:42%;background:#1D9E75"></div></div>
+      <div class="pn">42% — мій особистий рекорд економності!</div>
+    </div>
+    <div class="card">
+      <div class="ct">Що виділяється в лютому</div>
+      <div class="hi"><strong>59 963 ₴</strong> — я купила Sony ZV-10 Mark II з доларової картки (накопичувала 3+ місяці)</div>
+      <div class="hi"><strong>10 000 ₴</strong> — я відклала у банку «На машину» — нова ціль після камери</div>
+      <div class="hi"><strong>8 665 ₴</strong> — мої найнижчі витрати за всі три місяці</div>
+      <div class="hi"><strong>835 ₴</strong> — я витратила на кафе (у 3 рази менше ніж у січні)</div>
+      <div class="hi"><strong>107 ₴</strong> — тільки EVA, стрижки цього місяця не було</div>
+      <div class="hi"><strong>600 ₴</strong> — мобільний двічі (можливо, за два місяці)</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct">Моя кругова діаграма витрат — лютий</div>
+    <div class="ch" style="height:185px"><canvas id="cd3" role="img" aria-label="Кругова діаграма моїх витрат у лютому 2026">Інше 2160, Банка 1800, Перекази 1725, Їжа 1437, Мобільний 600, Одяг 425, Таксі 409, Краса 107.</canvas></div>
+  </div>
+  <div class="vrd" style="background:#E1F5EE;color:#04342C;border:.5px solid #5DCAA5">
+    Лютий — мій найкращий фінансовий місяць. 42% витрат, 10 000 ₴ у банку на авто, і я нарешті купила Sony ZV-10 Mark II за 59 963 ₴ — ті самі долари, які збирала місяцями. Це не витрата. Це інвестиція в моє майбутнє.
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     БЛОК 3: ФІНАНСОВИЙ СТАН ТА ІНВЕСТИЦІЇ
+══════════════════════════════════════════════ -->
+<div class="sec-header">Мій фінансовий стан та інвестиційні рішення · Частини 2 і 3</div>
+<div class="w">
+
+<!-- 2.4 ПОКАЗНИКИ -->
+<div class="sl">Частина 2.4 — Мої фінансові показники (база: Січень 2026)</div>
+<div class="card">
+  <div style="font-size:11px;color:var(--tx-tertiary);margin-bottom:10px">Мій дохід Д = 19 340 ₴ · Мої витрати С = 8 999 ₴ · Прожитковий мінімум ПМ = 3 028 ₴</div>
+  <div class="row">
+    <i class="ti ti-shield-check" style="font-size:16px;color:#1D9E75;flex-shrink:0" aria-hidden="true"></i>
+    <div class="rl"><strong>СМДД</strong> — чи достатній мій дохід?<br><span style="font-size:10px">Мій дохід / ПМ = 19 340 / 3 028</span></div>
+    <span class="rv" style="color:#1D9E75">6,39</span><span class="rn">≥ 1</span>
+    <span class="bdg b-ok"><i class="ti ti-check" style="font-size:12px"></i> Відмінно</span>
+  </div>
+  <div class="gt"><div class="gf" style="width:100%;background:#1D9E75"></div></div>
+  <div class="ml"><span>Мій дохід у 6,4 рази вище прожиткового мінімуму</span></div>
+  <div class="row" style="margin-top:8px">
+    <i class="ti ti-coin" style="font-size:16px;color:#1D9E75;flex-shrink:0" aria-hidden="true"></i>
+    <div class="rl"><strong>СВЗВ</strong> — яка частка мого доходу йде на витрати?<br><span style="font-size:10px">Мої витрати / Мій дохід = 8 999 / 19 340</span></div>
+    <span class="rv" style="color:#1D9E75">0,47</span><span class="rn">≤ 0,5</span>
+    <span class="bdg b-ok"><i class="ti ti-check" style="font-size:12px"></i> Норма</span>
+  </div>
+  <div class="gt"><div class="gf" style="width:47%;background:#1D9E75"></div></div>
+  <div class="ml"><span>Я витрачаю 47% доходу — норма до 50%</span><span>межа 0,5</span></div>
+  <div class="row" style="margin-top:8px">
+    <i class="ti ti-alert-triangle" style="font-size:16px;color:#BA7517;flex-shrink:0" aria-hidden="true"></i>
+    <div class="rl"><strong>САФЗВ</strong> — в скільки разів мої витрати вищі ПМ?<br><span style="font-size:10px">Мої витрати / ПМ = 8 999 / 3 028</span></div>
+    <span class="rv" style="color:#BA7517">2,97</span><span class="rn">1–2,5</span>
+    <span class="bdg b-wn"><i class="ti ti-alert-triangle" style="font-size:12px"></i> Трохи вище</span>
+  </div>
+  <div class="gt"><div class="gf" style="width:79%;background:#BA7517"></div></div>
+  <div class="ml"><span>Я витрачаю в 2,97 рази більше ПМ — ціль: до 2,5</span></div>
+  <div style="margin:10px 0 6px;border-top:.5px solid var(--br-faint);padding-top:10px;font-size:11px;font-weight:500;color:var(--tx-secondary)">Мій інвестиційний потенціал</div>
+  <div style="background:var(--bg-secondary);border-radius:var(--r-md);padding:10px 12px;margin-bottom:8px;font-size:12px">
+    <span style="color:var(--tx-secondary)">Мій ІП = 3,9324 + 0,6257 × 19 340 − 0,6027 × 3 028 = </span>
+    <span style="font-weight:500">10 279 ₴/міс</span>
+  </div>
+  <div class="row">
+    <i class="ti ti-trending-up" style="font-size:16px;color:#1D9E75;flex-shrink:0" aria-hidden="true"></i>
+    <div class="rl"><strong>СФФП</strong> — яка частка мого доходу — інвестиційний потенціал?<br><span style="font-size:10px">Мій ІП / Мій дохід = 10 279 / 19 340</span></div>
+    <span class="rv" style="color:#1D9E75">0,53</span><span class="rn">≥ 0,4</span>
+    <span class="bdg b-ok"><i class="ti ti-check" style="font-size:12px"></i> Норма</span>
+  </div>
+  <div class="gt"><div class="gf" style="width:66%;background:#1D9E75"></div></div>
+  <div class="ml"><span>53% мого доходу — потенційні інвестиції</span></div>
+  <div class="row" style="margin-top:8px">
+    <i class="ti ti-piggy-bank" style="font-size:16px;color:#1D9E75;flex-shrink:0" aria-hidden="true"></i>
+    <div class="rl"><strong>СВФП</strong> — чи використовую я свій потенціал?<br><span style="font-size:10px">Я інвестувала 30 357 / Мій ІП за 3 міс. 30 837</span></div>
+    <span class="rv" style="color:#1D9E75">0,98</span><span class="rn">≥ 0,8</span>
+    <span class="bdg b-ok"><i class="ti ti-check" style="font-size:12px"></i> Відмінно</span>
+  </div>
+  <div class="gt"><div class="gf" style="width:98%;background:#1D9E75"></div></div>
+  <div class="ml"><span>Я використала 98% свого інвестиційного потенціалу</span></div>
+  <div class="hb okb" style="margin-top:10px">5 з 5 показників — у нормі або кращі. Єдиний нюанс: мій САФЗВ = 2,97 трохи вище норми 2,5 — вейп і активне соціальне життя роблять своє.</div>
+</div>
+
+<!-- 2.1 ФОНДИ -->
+<div class="sl">Частина 2.1 — Мої фонди соціального страхування</div>
+<div class="g2">
+  <div class="card">
+    <div style="font-size:12px;font-weight:500;margin-bottom:8px">Моя поточна взаємодія</div>
+    <div class="fi"><div class="fd" style="background:#E24B4A"></div><div><div class="fn">Пенсійний фонд</div><div class="fs">Я не взаємодію — працюю неофіційно, ЄСВ не сплачую</div></div></div>
+    <div class="fi"><div class="fd" style="background:#E24B4A"></div><div><div class="fn">Фонд соціального страхування</div><div class="fs">Я не маю лікарняних і декретних виплат</div></div></div>
+    <div class="fi"><div class="fd" style="background:#E24B4A"></div><div><div class="fn">Фонд зайнятості</div><div class="fs">Я не маю права на допомогу при безробітті</div></div></div>
+    <div class="hb dgb" style="margin-top:8px">Якщо я захворію або втрачу учнів — жодної державної підтримки не буде.</div>
+  </div>
+  <div class="card">
+    <div style="font-size:12px;font-weight:500;margin-bottom:8px">Якщо я зареєструюсь як ФОП</div>
+    <div class="fi"><div class="fd" style="background:#1D9E75"></div><div><div class="fn">Пенсійний фонд</div><div class="fs">Я сплачуватиму ЄСВ 22% × 8 000 = 1 760 ₴/міс → накопичую страховий стаж</div></div></div>
+    <div class="fi"><div class="fd" style="background:#BA7517"></div><div><div class="fn">Фонд соц. страхування</div><div class="fs">Добровільно — матиму право на лікарняні при сплаті ЄСВ</div></div></div>
+    <div class="fi"><div class="fd" style="background:#E24B4A"></div><div><div class="fn">Фонд зайнятості</div><div class="fs">Як ФОП я не є найманим працівником — допомога недоступна</div></div></div>
+    <div class="hb okb" style="margin-top:8px">ФОП вирішує головне: я отримаю стаж і лікарняні за ~1 760 ₴/міс.</div>
+  </div>
+</div>
+
+<!-- 2.2 ПОДАТКИ -->
+<div class="sl">Частина 2.2 — Моє податкове навантаження</div>
+<div class="g2">
+  <div class="card">
+    <div style="font-size:12px;font-weight:500;margin-bottom:8px">Зараз я сплачую</div>
+    <div class="kpi"><div class="kv" style="color:#E24B4A">0 ₴</div><div class="kl">Моє фактичне податкове навантаження</div></div>
+    <div class="hb dgb" style="margin-top:8px">Я працюю неофіційно. ПДФО, ВЗ і ЄСВ не сплачую. Це юридичний ризик.</div>
+  </div>
+  <div class="card">
+    <div style="font-size:12px;font-weight:500;margin-bottom:8px">Якби я була ФОП 3 групи (ПКУ)</div>
+    <div class="tx"><span style="font-size:11px;color:var(--tx-secondary);flex:1">Єдиний соціальний внесок (ЄСВ)</span><span style="font-size:11px;color:#0C447C;min-width:36px;text-align:center">22%</span><span style="font-size:12px;font-weight:500;color:#E24B4A;min-width:64px;text-align:right">1 760 ₴</span></div>
+    <div class="tx"><span style="font-size:11px;color:var(--tx-secondary);flex:1">Єдиний податок (ФОП гр. 3)</span><span style="font-size:11px;color:#0C447C;min-width:36px;text-align:center">5%</span><span style="font-size:12px;font-weight:500;color:#E24B4A;min-width:64px;text-align:right">967 ₴</span></div>
+    <div class="tx"><span style="font-size:11px;color:var(--tx-secondary);flex:1">Військовий збір</span><span style="font-size:11px;color:#0C447C;min-width:36px;text-align:center">5%</span><span style="font-size:12px;font-weight:500;color:#E24B4A;min-width:64px;text-align:right">967 ₴</span></div>
+    <div class="tx" style="border-top:.5px solid var(--br-light)"><span style="font-size:11px;font-weight:500;flex:1">Мій загальний внесок</span><span style="font-size:11px;color:#0C447C;min-width:36px;text-align:center">~19%</span><span style="font-size:13px;font-weight:500;color:#E24B4A;min-width:64px;text-align:right">3 694 ₴</span></div>
+    <div style="font-size:10px;color:var(--tx-tertiary);margin-top:6px">База ЄСВ: мін. зарплата 8 000 ₴ · база ЄП та ВЗ: мій дохід 19 340 ₴</div>
+  </div>
+</div>
+
+<!-- 2.3 ПЕНСІЯ -->
+<div class="sl">Частина 2.3 — Моя потенційна державна пенсія</div>
+<div class="card">
+  <div style="font-size:11px;color:var(--tx-tertiary);margin-bottom:10px">Мій вік виходу на пенсію: 60 років · Мій страховий стаж зараз: 0 років · До пенсії: ~42 роки</div>
+  <div class="pr">
+    <div style="min-width:145px;font-size:11px;color:var(--tx-secondary)"><strong style="color:var(--tx-primary)">Якщо я нічого не зміню</strong><br>0 р. стажу → мінімальна</div>
+    <div class="pb"><div class="pf" style="width:20%;background:#E24B4A"></div></div>
+    <span style="min-width:72px;text-align:right;font-size:14px;font-weight:500;color:#E24B4A">~2 361 ₴</span>
+    <span class="bdg b-dng">Нижче ПМ</span>
+  </div>
+  <div class="pr">
+    <div style="min-width:145px;font-size:11px;color:var(--tx-secondary)"><strong style="color:var(--tx-primary)">Якщо я стану ФОП зараз</strong><br>35 р. стажу → гідна</div>
+    <div class="pb"><div class="pf" style="width:65%;background:#BA7517"></div></div>
+    <span style="min-width:72px;text-align:right;font-size:14px;font-weight:500;color:#BA7517">~7–11 тис.</span>
+    <span class="bdg b-wn">Прийнятно</span>
+  </div>
+  <div class="pr">
+    <div style="min-width:145px;font-size:11px;color:var(--tx-secondary)"><strong style="color:var(--tx-primary)">Оптимальний сценарій</strong><br>Вищий офіційний дохід</div>
+    <div class="pb"><div class="pf" style="width:100%;background:#1D9E75"></div></div>
+    <span style="min-width:72px;text-align:right;font-size:14px;font-weight:500;color:#1D9E75">12 000+ ₴</span>
+    <span class="bdg b-ok">Комфортно</span>
+  </div>
+  <div class="hb wnb" style="margin-top:10px">2 361 ₴/міс — менше прожиткового мінімуму. Я не можу покладатись лише на державу. Мої долари в тумбочці — вже хороший старт власних накопичень на пенсію.</div>
+</div>
+
+<!-- 3.1 ДЕПОЗИТИ -->
+<div class="sl">Частина 3.1 — Де я можу покласти гроші (3 варіанти)</div>
+<div class="g3">
+  <div class="dc">
+    <div class="db"><i class="ti ti-building-bank" style="font-size:13px;vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>ПриватБанк</div>
+    <div style="font-size:10px;color:var(--tx-secondary)">«Ощадний депозит» · UAH</div>
+    <div class="dr" style="color:#1D9E75">12% <span style="font-size:12px;font-weight:400;color:var(--tx-secondary)">річних</span></div>
+    <div class="dd">Строк: 12 місяців<br>Мін. сума: від 1 000 ₴<br>Я можу поповнювати<br>Дострокове зняття: з втратою %<br><span style="color:#1D9E75;font-weight:500">+ керую з того ж додатку</span></div>
+    <div style="margin-top:8px;font-size:11px;color:var(--tx-secondary)">Якщо я кладу 5 000 ₴ × 12 міс → дохід ≈ <strong>3 600 ₴</strong></div>
+  </div>
+  <div class="dc rec">
+    <div class="rb">Вже маю</div>
+    <div class="db"><i class="ti ti-building-bank" style="font-size:13px;vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>monobank</div>
+    <div style="font-size:10px;color:var(--tx-secondary)">«Банка» / Депозит · UAH</div>
+    <div class="dr" style="color:#185FA5">11% <span style="font-size:12px;font-weight:400;color:var(--tx-secondary)">річних</span></div>
+    <div class="dd">Строк: гнучкий<br>Мін. сума: без мінімуму<br>Я поповнюю коли хочу<br>Знімаю частково (% за дні)<br><span style="color:#185FA5;font-weight:500">+ я вже користуюсь цим</span></div>
+    <div style="margin-top:8px;font-size:11px;color:var(--tx-secondary)">Я кладу 3 000 ₴ × 12 міс → дохід ≈ <strong>1 980 ₴</strong></div>
+  </div>
+  <div class="dc">
+    <div class="db"><i class="ti ti-building-bank" style="font-size:13px;vertical-align:-2px;margin-right:4px" aria-hidden="true"></i>ПУМБ</div>
+    <div style="font-size:10px;color:var(--tx-secondary)">«Класичний депозит» · UAH</div>
+    <div class="dr" style="color:#854F0B">13% <span style="font-size:12px;font-weight:400;color:var(--tx-secondary)">річних</span></div>
+    <div class="dd">Строк: 12 місяців<br>Мін. сума: від 10 000 ₴<br>Поповнення: ні<br>Знімаю лише в кінці<br><span style="color:#BA7517;font-weight:500">⚠ вища ставка, менша гнучкість</span></div>
+    <div style="margin-top:8px;font-size:11px;color:var(--tx-secondary)">10 000 ₴ × 12 міс → дохід ≈ <strong>1 300 ₴</strong></div>
+  </div>
+</div>
+<div class="hb okb">Моя стратегія: monobank «Банка» — для щомісячних відкладань (1 800–3 000 ₴). ПриватБанк або ПУМБ — коли накопичу 10 000+ ₴ для строкового вкладу. І головне: мої $1 500 в тумбочці варто перенести на валютний депозит — готівка нічого не заробляє.</div>
+
+<!-- 3.2 СТРАХУВАННЯ -->
+<div class="sl">Частина 3.2 — Моє страхування майна</div>
+<div class="card">
+  <div class="ii">
+    <div><div style="font-size:12px;font-weight:500"><i class="ti ti-home" style="font-size:13px;vertical-align:-2px;margin-right:5px;color:var(--tx-tertiary)" aria-hidden="true"></i>Страхування нерухомості</div><div style="font-size:11px;color:var(--tx-secondary);margin-top:1px">У мене немає нерухомості у власності</div></div>
+    <span class="bdg b-neu">Не актуально</span>
+  </div>
+  <div class="ii">
+    <div><div style="font-size:12px;font-weight:500"><i class="ti ti-car" style="font-size:13px;vertical-align:-2px;margin-right:5px;color:#BA7517" aria-hidden="true"></i>КАСКО / ОСЦПВ (авто)</div><div style="font-size:11px;color:var(--tx-secondary);margin-top:1px">Я коплю на авто — при покупці мені знадобиться страховка. Як новий водій — матиму підвищений коефіцієнт</div></div>
+    <span class="bdg b-wn">Планово</span>
+  </div>
+  <div class="ii">
+    <div><div style="font-size:12px;font-weight:500"><i class="ti ti-heart" style="font-size:13px;vertical-align:-2px;margin-right:5px;color:#1D9E75" aria-hidden="true"></i>Добровільне медичне страхування (ДМС)</div><div style="font-size:11px;color:var(--tx-secondary);margin-top:1px">Я працюю без соціальних гарантій — при хворобі все оплачую сама. ДМС коштує ~1 000–2 000 ₴/рік</div></div>
+    <span class="bdg b-ok">Рекомендую собі</span>
+  </div>
+  <div class="ii">
+    <div><div style="font-size:12px;font-weight:500"><i class="ti ti-device-laptop" style="font-size:13px;vertical-align:-2px;margin-right:5px;color:#185FA5" aria-hidden="true"></i>Страхування камери Sony ZV-10</div><div style="font-size:11px;color:var(--tx-secondary);margin-top:1px">Я інвестувала ~60 000 ₴ в камеру — мій засіб виробництва. Варто застрахувати від крадіжки або поломки</div></div>
+    <span class="bdg b-inf">Варто розглянути</span>
+  </div>
+</div>
+
+<!-- 3.3 СТРАТЕГІЯ -->
+<div class="sl">Частина 3.3 — Моя фінансова стратегія</div>
+<div class="g4s">
+  <div class="sc act">
+    <div class="sn">1</div>
+    <div class="sm">Стратегія розвитку</div>
+    <div style="font-size:10px;background:#9FE1CB;color:#04342C;padding:2px 6px;border-radius:10px;display:inline-block;margin-bottom:5px;font-weight:500">Моя стратегія</div>
+    <div class="sd">Мені 18 років. Дохід нестабільний. Фінансових активів формально немає — хоча долари вже є.</div>
+  </div>
+  <div class="sc">
+    <div class="sn" style="color:var(--tx-secondary)">2</div>
+    <div class="sm">Стратегія накопичення</div>
+    <div class="sd">Цільові накопичення. Вік 35–45 р. Стабільні джерела. Фактично — я вже поводжусь саме так.</div>
+  </div>
+  <div class="sc">
+    <div class="sn" style="color:var(--tx-secondary)">3</div>
+    <div class="sm">Стратегія інвестування</div>
+    <div class="sd">Інвестиційні операції для прибутку. Вік 45–55 р. Наявність резервів.</div>
+  </div>
+  <div class="sc">
+    <div class="sn" style="color:var(--tx-secondary)">4</div>
+    <div class="sm">Стратегія стабілізації</div>
+    <div class="sd">Часткове використання резервів. Вік 55+. Диверсифікований портфель.</div>
+  </div>
+</div>
+<div class="hb okb">За класифікацією — я на Стратегії 1. Але поведінково я вже на Стратегії 2: долари, банка «На машину», камера як актив. Мій наступний крок — ФОП і офіційний перехід до накопичення.</div>
+
+</div><!-- /блок 3 -->
+</div><!-- /page -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+function sw(id,btn,color){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>{t.classList.remove('on');t.style.color='';});
+  document.getElementById('p-'+id).classList.add('active');
+  btn.classList.add('on');btn.style.color=color;
+}
+
+const mn=['Грудень 2025','Січень 2026','Лютий 2026'];
+const CLR=['#1D9E75','#7F77DD','#2E7FCC','#D4841A','#4A9FCC','#D85A30','#808090','#2DBB88'];
+
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:mn,datasets:[
+  {label:'Мої доходи',data:[40839,19340,20508],backgroundColor:'#1D9E75',borderRadius:5},
+  {label:'Мої витрати',data:[18367,8999,8665],backgroundColor:'#D85A30',borderRadius:5},
+  {label:'Я заощадила',data:[18230,2127,10000],backgroundColor:'#2E7FCC',borderRadius:5}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y.toLocaleString('uk-UA')} ₴`}}},scales:{y:{ticks:{callback:v=>v.toLocaleString('uk-UA')+'₴',font:{size:11}},grid:{color:'rgba(0,0,0,.07)'}},x:{grid:{display:false}}}}});
+
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Їжа','Одяг','Транспорт/Розваги','Краса','Мобільний','Інше (вейп+)','Перекази'],datasets:[
+  {label:'Грудень',data:[1900,3000,2361,1024,900,1790,7310],backgroundColor:'#B8730A',borderRadius:3},
+  {label:'Січень',data:[2605,490,195,0,300,3209,2200],backgroundColor:'#1A65A8',borderRadius:3},
+  {label:'Лютий',data:[1437,425,409,107,600,2160,1725],backgroundColor:'#0F7A55',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.parsed.y.toLocaleString('uk-UA')} ₴`}}},scales:{x:{ticks:{font:{size:10}},grid:{display:false}},y:{ticks:{callback:v=>v.toLocaleString('uk-UA')+'₴',font:{size:11}},grid:{color:'rgba(0,0,0,.07)'}}}}});
+
+new Chart(document.getElementById('c3'),{type:'bar',indexAxis:'y',data:{labels:['SMM (балетна студія)','Кірпічик (2×/тиж)','Бублік (2×/тиж)','Булка (1×/тиж)','Стипендія'],datasets:[{label:'₴/міс',data:[13500,2150,1605,1200,1418],backgroundColor:CLR,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.parsed.x.toLocaleString('uk-UA')} ₴/міс`}}},scales:{x:{ticks:{callback:v=>v.toLocaleString('uk-UA')+'₴',font:{size:11}},grid:{color:'rgba(0,0,0,.07)'}},y:{grid:{display:false},ticks:{font:{size:11}}}}}});
+
+const dOpts={responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right',labels:{font:{size:10},boxWidth:10}},tooltip:{callbacks:{label:c=>`${c.label}: ${c.parsed.toLocaleString('uk-UA')} ₴`}}}};
+new Chart(document.getElementById('cd1'),{type:'doughnut',data:{labels:['Перекази','Одяг','Транспорт/Розваги','Їжа','Інше (вейп+)','Краса','Мобільний'],datasets:[{data:[7310,3000,2361,1900,1790,1024,900],backgroundColor:CLR,borderWidth:2,borderColor:'#fff'}]},options:dOpts});
+new Chart(document.getElementById('cd2'),{type:'doughnut',data:{labels:['Інше (вейп+)','Їжа','Перекази','Одяг','Мобільний','Транспорт'],datasets:[{data:[3209,2605,2200,490,300,195],backgroundColor:CLR,borderWidth:2,borderColor:'#fff'}]},options:dOpts});
+new Chart(document.getElementById('cd3'),{type:'doughnut',data:{labels:['Інше','Банка/Заощадж.','Перекази','Їжа','Мобільний','Одяг','Таксі/Розваги','Краса'],datasets:[{data:[2160,1800,1725,1437,600,425,409,107],backgroundColor:CLR,borderWidth:2,borderColor:'#fff'}]},options:dOpts});
+</script>
+</body>
+</html>
